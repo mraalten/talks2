@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="talks2" data-ng-controller="Talks2Controller">
+
+  <ion-tabs class="tabs-positive tabs-icon-top">
+
+    <ion-tab title="Info" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+
+    </ion-tab>
+
+    <ion-tab title="Chats" icon-on="ion-person-stalker" icon-off="ion-person-stalker">
+      <ion-header-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+          <button class="button icon icon-left ion-home" ng-click="doAlert()">+</button>
+        </div>
+        <h1 class="title">Chats</h1>
+        <div class="buttons">
+          <button class="button">Right Button</button>
+        </div>
+      </ion-header-bar>
+    </ion-tab>
+
+    <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+      <ion-content padding>
+        <button ion-button block color="dark" (click)="doAlert()">Show Basic Alert</button>
+      </ion-content>
+    </ion-tab>
+
+  </ion-tabs>
+
+  </body>
+</html>
