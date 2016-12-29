@@ -45,9 +45,37 @@
         </div>
         <h1 class="title">Chats</h1>
         <div class="buttons">
-          <button class="button">Right Button</button>
+          <button class="button icon icon-left ion-person-stalker">&nbsp;Nieuw</button>
         </div>
       </ion-header-bar>
+      <br/><br/><br/><br/>
+      <ion-list ng-controller="Talks2Controller"
+                show-delete="false"
+                show-reorder="true"
+                can-swipe="true">
+        <ion-item ng-repeat="contact in contacts"
+                  class="item-thumbnail-left">
+
+          <img class="ra-rounded" ng-src="img/{{contact.img}}">
+          <h2><b>{{contact.name}}</b></h2>
+          <p>{{contact.lastLine}}</p>
+          <ion-option-button class="button-positive"
+                             ng-click="share(contact)">
+            Share
+          </ion-option-button>
+          <ion-option-button class="button-info"
+                             ng-click="edit(contact)">
+            Edit
+          </ion-option-button>
+          <ion-delete-button class="ion-minus-circled"
+                             ng-click="contacts.splice($index, 1)">
+          </ion-delete-button>
+          <ion-reorder-button class="ion-navicon"
+                              on-reorder="reorderItem(contact, $fromIndex, $toIndex)">
+          </ion-reorder-button>
+
+        </ion-item>
+      </ion-list>
     </ion-tab>
 
     <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">

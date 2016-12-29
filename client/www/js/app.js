@@ -5,11 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('talks2', ['ionic'])
     .controller('Talks2Controller', ['$scope', '$ionicPopup', function($scope, $ionicPopup) {
-        $scope.tasks = [
-            { title: 'Collect coins' },
-            { title: 'Eat mushrooms' },
-            { title: 'Get high enough to grab the flag' },
-            { title: 'Find the Princess' }
+        $scope.contacts = [
+            { img: 'Aalten-Richard.jpg',
+              name: 'Aalten Richard',
+              lastLine: 'Fijne feestdagen'},
+            { img: 'Aalten-Martijn.png',
+                name: 'Aalten Martijn',
+                lastLine: 'Ik ga nu rijden'}
         ];
 
         $scope.doAlert = function () {

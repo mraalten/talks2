@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+.ra-rounded {
+    border-radius: 50%;
+    height: 2%;
+    width: 2%;
+}
